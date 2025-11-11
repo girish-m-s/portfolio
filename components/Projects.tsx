@@ -4,7 +4,7 @@ const projects = [
     description:
       'Built an intelligent conversational AI system using Retrieval-Augmented Generation (RAG) with LangChain and OpenAI. Implemented vector databases for efficient document retrieval and context-aware responses. Deployed on AWS with scalable infrastructure handling 1000+ daily queries.',
     technologies: ['Python', 'LangChain', 'OpenAI', 'Pinecone', 'FastAPI', 'Docker', 'AWS'],
-    link: '#',
+    link: 'https://github.com/girish-m-s/ai-chatbot-rag',
     image: '/projects/chatbot.jpg',
   },
   {
@@ -12,7 +12,7 @@ const projects = [
     description:
       'Designed and implemented a real-time data processing pipeline using Apache Kafka and Spark Streaming. Processed millions of events per day with sub-second latency. Built monitoring dashboards and alerting systems for pipeline health.',
     technologies: ['Apache Kafka', 'Spark Streaming', 'AWS', 'Python', 'Scala', 'Grafana'],
-    link: '#',
+    link: 'https://github.com/girish-m-s/realtime-data-pipeline',
     image: '/projects/pipeline.jpg',
   },
   {
@@ -20,7 +20,7 @@ const projects = [
     description:
       'Developed a deep learning model for automated defect detection in manufacturing. Achieved 98% accuracy using custom CNN architecture. Reduced quality inspection time by 75% and deployed to edge devices for real-time processing.',
     technologies: ['Python', 'TensorFlow', 'OpenCV', 'ONNX', 'Flask', 'Raspberry Pi'],
-    link: '#',
+    link: 'https://github.com/girish-m-s/cv-quality-control',
     image: '/projects/vision.jpg',
   },
   {
@@ -28,7 +28,7 @@ const projects = [
     description:
       'Built a hybrid recommendation system combining collaborative filtering and content-based approaches. Implemented using matrix factorization and neural networks. Increased user engagement by 40% and improved click-through rates.',
     technologies: ['Python', 'TensorFlow', 'Scikit-learn', 'Redis', 'PostgreSQL', 'Docker'],
-    link: '#',
+    link: 'https://github.com/girish-m-s/recommendation-engine',
     image: '/projects/recommendation.jpg',
   },
   {
@@ -36,7 +36,7 @@ const projects = [
     description:
       'Created a multi-language sentiment analysis system for social media monitoring. Fine-tuned BERT models for domain-specific classification. Processed 100K+ posts daily with real-time sentiment tracking and trend analysis.',
     technologies: ['Python', 'Transformers', 'BERT', 'FastAPI', 'MongoDB', 'Kubernetes'],
-    link: '#',
+    link: 'https://github.com/girish-m-s/nlp-sentiment-analysis',
     image: '/projects/nlp.jpg',
   },
   {
@@ -44,7 +44,7 @@ const projects = [
     description:
       'Established end-to-end MLOps infrastructure for model training, deployment, and monitoring. Implemented CI/CD pipelines for ML models with automated testing and validation. Reduced model deployment time from weeks to hours.',
     technologies: ['MLflow', 'Kubeflow', 'Jenkins', 'Docker', 'Kubernetes', 'AWS', 'Python'],
-    link: '#',
+    link: 'https://github.com/girish-m-s/mlops-platform',
     image: '/projects/mlops.jpg',
   },
 ];
@@ -72,7 +72,9 @@ export default function Projects() {
                     <a
                       className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-primary-300 focus-visible:text-primary-300 group/link text-base"
                       href={project.link}
-                      aria-label={project.title}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label={`${project.title} (opens in a new tab)`}
                     >
                       <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
                       <span>

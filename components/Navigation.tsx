@@ -13,23 +13,24 @@ export default function Navigation() {
   const [activeSection, setActiveSection] = useState('about');
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i].id);
+        if (section) {
+          const sectionTop = section.offsetTop;
+          if (scrollPosition >= sectionTop) {
+            setActiveSection(sections[i].id);
+            break;
           }
-        });
-      },
-      { threshold: 0.3 }
-    );
+        }
+      }
+    };
 
-    sections.forEach(({ id }) => {
-      const element = document.getElementById(id);
-      if (element) observer.observe(element);
-    });
-
-    return () => observer.disconnect();
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -39,7 +40,7 @@ export default function Navigation() {
           <li key={id}>
             <a
               href={`#${id}`}
-              className={`nav-link py-3 ${
+              className={`nav-link group py-3 ${
                 activeSection === id ? 'nav-link-active' : ''
               }`}
             >
