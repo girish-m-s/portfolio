@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 15 23 42;
+    --foreground: 226 232 240;
+  }
+
+  * {
+    @apply border-slate-700;
+  }
+
+  body {
+    @apply bg-slate-900 text-slate-300;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply flex items-center gap-3 text-sm font-medium uppercase tracking-widest text-slate-500 hover:text-slate-200 transition-colors duration-200;
+  }
+
+  .nav-link-active {
+    @apply text-slate-200;
+  }
+
+  .nav-link-indicator {
+    @apply h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200;
+  }
+
+  .section-heading {
+    @apply text-sm font-bold uppercase tracking-widest text-slate-200 mb-4 lg:sr-only;
+  }
+
+  .card {
+    @apply group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50;
+  }
+
+  .card-header {
+    @apply z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2;
+  }
+
+  .card-content {
+    @apply z-10 sm:col-span-6;
+  }
+
+  .card-title {
+    @apply font-medium leading-snug text-slate-200 group-hover:text-primary-400 transition-colors;
+  }
+
+  .card-subtitle {
+    @apply text-sm font-medium leading-normal text-slate-400 group-hover:text-slate-300 transition-colors;
+  }
+
+  .card-description {
+    @apply mt-2 text-sm leading-normal text-slate-400;
+  }
+
+  .card-overlay {
+    @apply absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg;
+  }
+
+  .tag {
+    @apply flex items-center rounded-full bg-primary-400/10 px-3 py-1 text-xs font-medium leading-5 text-primary-300;
+  }
+
+  .social-link {
+    @apply block hover:text-slate-200 transition-colors;
+  }
+
+  .link-underline {
+    @apply inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-primary-400 focus-visible:text-primary-400 group/link;
+  }
+
+  .link-arrow {
+    @apply inline-block ml-1 transition-transform group-hover/link:translate-x-1;
+  }
+}
+
